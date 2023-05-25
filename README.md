@@ -23,30 +23,25 @@
   - It enhances the productivity of the developer and leads to the development of a codebase that is flexible and easy to maintain.
 
 
-## Testing with React Testing Library and Jest 
+### Testing with React Testing Library and Jest 
 
-    What is it ? 
-      -  The React Testing Library is a very light-weight solution for testing React components. It provides light utility functions on top of react-dom and react-dom/test-utils, in a way that encourages better testing practices. 
+  -  The React Testing Library is a very light-weight solution for testing React components. It provides light utility functions on top of react-dom and react-dom/test-utils, in a way that encourages better testing practices. 
       
-      Its primary guiding principle is:
-        - The more your tests resemble the way your software is used, the more confidence they can give you.
+  - Its primary guiding principle is : The more your tests resemble the way your software is used, the more confidence they can give you.
 
-      [For more, click here](https://testing-library.com/docs/react-testing-library/intro)
+  [For more, click here](https://testing-library.com/docs/react-testing-library/intro)
 
-    It Helps With:
-
-      1. Rendering components into Virtual DOM
-      2. Searching Virtual DOM
-      3. Interacting with Virtual DOM
+  It Helps With:
+    1. Rendering components into Virtual DOM
+    2. Searching Virtual DOM
+    3. Interacting with Virtual DOM
   
   However, its needs a test runner
     - Find tests, run them, make assertions
-
     Jest, Mocha, and Jasmine
 
   Jest is recommended by Testing Library and also comes with create react App.
   
-
 ### We can not test everything, so we should follow test priority,  
   1. Critical features / Must have features 
   2. Edge cases in above features 
@@ -76,10 +71,16 @@
 
 
 ###  Explaining Pattern with Example
-    
+  ```JavaScript
+    // App.js 
+
+    <div className="App">
+      <p className='WelcomeText'>Hello, Welcome to testing KT session</p>
+    </div>
+  ```
 
   ```JavaScript
-
+    // App.test.js
     // Explain details what we want to test:
     test('Loads and displays ', () => {
 
