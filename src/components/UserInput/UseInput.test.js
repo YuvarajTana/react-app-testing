@@ -1,7 +1,7 @@
 import { fireEvent, queryByText, render, screen } from "@testing-library/react";
 import UserInput from "./UserInput";
 
-test('Should render text filed and Submit button ', () => {
+test('Should render text filed and Submit button ', async () => {
 
   render(<UserInput />);
 
@@ -16,7 +16,7 @@ test('Should render text filed and Submit button ', () => {
 
 
   // Should be able fire event and accept only phone number 
-  fireEvent.change(userInputField, { target : { value: "8008729224" }});
+  await fireEvent.change(userInputField, { target : { value: "8008729224" }});
   expect(userInputField.value).toBe('8008729224');
 
   // Click on submit button

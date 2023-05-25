@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+## All about Testing React applications 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Testing
 
-## Available Scripts
+  **What is Testing**
+    - Testing is the process of evaluating a system / software to find whether it is working as per the requirements or not.
+  
+  **Why do test**
+    - It tests/checks a system in order to identify any gaps, errors, or missing requirements in contrary to the actual requirements.
 
-In the project directory, you can run:
+## What and Why TDD(Test Driven Development)
+  - It is a software development practice that focuses on creating unit test cases before developing the actual code. It is an iterative approach combining programming, unit test creation, and refactoring.
 
-### `npm start`
+  - In TDD, developers create small test cases for every feature based on their initial understanding. The primary intention of this technique is to modify or write new code only if the tests fail. This prevents duplication of test scripts.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Benefits of TDD**
+  - It helps developers better analyze and understand client requirements and request clarity when not adequately defined.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  - Adding and testing new functionalities become much easier in the latter stages of development.
 
-### `npm test`
+  - Test coverage under TDD is much higher compared to conventional development models. The TDD focuses on creating tests for each functionality right from the beginning.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - It enhances the productivity of the developer and leads to the development of a codebase that is flexible and easy to maintain.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Testing with React Testing Library and Jest 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    What is it ? 
+      -  The React Testing Library is a very light-weight solution for testing React components. It provides light utility functions on top of react-dom and react-dom/test-utils, in a way that encourages better testing practices. 
+      
+      Its primary guiding principle is:
+        - The more your tests resemble the way your software is used, the more confidence they can give you.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+      [For more, click here](https://testing-library.com/docs/react-testing-library/intro)
 
-### `npm run eject`
+    It Helps With:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+      1. Rendering components into Virtual DOM
+      2. Searching Virtual DOM
+      3. Interacting with Virtual DOM
+  
+  However, its needs a test runner
+    - Find tests, run them, make assertions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Jest, Mocha, and Jasmine
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  Jest is recommended by Testing Library and also comes with create react App.
+  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### We can not test everything, so we should follow test priority,  
+  1. Critical features / Must have features 
+  2. Edge cases in above features 
+  3. Things which are easy to break
 
-## Learn More
+### Basic component testing:
+  - User interactions
+  - rendering and conditional rendering 
+  - Hooks
+  - Utility functions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-  By default, Jest will look for files with the .test.js suffix and files with the .js suffix in __tests__ folders
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Your test suite must contain at least one test.
 
-### Code Splitting
+- The expect function is used every time you want to verify a certain outcome. Most expect functions are paired with a matcher function to assert something about a particular value
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+### Arrange Act Assert - Pattern 
+  - Arrange/Act/Assert (AAA) is a pattern for arranging and formatting code in Unit Test methods.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  Arrange: we prepare the testing environment, all of the arguments for the function being tested and its dependencies;
 
-### Making a Progressive Web App
+  Act: we call the tested function;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  Assert: we compare function results with expected results, if they are equal the function worked correctly.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+###  Explaining Pattern with Example
+    
 
-### Deployment
+  ```JavaScript
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    // Explain details what we want to test:
+    test('Loads and displays ', () => {
 
-### `npm run build` fails to minify
+      // Arrange: prepare the environment ,render the component.
+      render(<App />);
+      
+      // Act: Try to find element / anything expected by selecting
+      const paragraphElement = screen.getByText(/Welcome to testing/i);
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+      
+      // Assert: check that expected element and test in the document.
+      expect(paragraphElement).toBeInTheDocument();
+      expect(paragraphElement.textContent).toEqual('Hello, Welcome to testing KT session');
+    });    
+  ```
+
+
