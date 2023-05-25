@@ -6,8 +6,11 @@ function App() {
   return (
     <div className="App">
       {/* <UserInput /> */}
-      <p>Hello, Welcome to testing KT session</p>
-      <PromoCode></PromoCode>
+
+      <p className='WelcomeText'>Hello, Welcome to testing KT session</p>
+
+      
+      {/* <PromoCode></PromoCode> */}
     </div>
   );
 }
