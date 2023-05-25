@@ -32,10 +32,12 @@
   [For more, click here](https://testing-library.com/docs/react-testing-library/intro)
 
   It Helps With:
-    1. Rendering components into Virtual DOM
-    2. Searching Virtual DOM
-    3. Interacting with Virtual DOM
   
+  1. Rendering components into Virtual DOM
+  2. Searching Virtual DOM
+  3. Interacting with Virtual DOM
+  
+
   However, its needs a test runner
     - Find tests, run them, make assertions
     Jest, Mocha, and Jasmine
