@@ -7,6 +7,7 @@ Goal:
 - React app testing with (Testing library and Jest)
 
 - Important API's
+
   render
   screen 
   Queries - getByTestId, getByText, getByRole 
