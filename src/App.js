@@ -7,10 +7,10 @@ function App() {
     <div className="App">
       {/* <UserInput /> */}
 
-      <p className='WelcomeText'>Hello, Welcome to testing KT session</p>
+      <p className='WelcomeText' data-testid="sample">Hello, Welcome to testing KT session</p>
 
       
-      {/* <PromoCode></PromoCode> */}
+      <PromoCode promo={''}></PromoCode> 
     </div>
   );
 }

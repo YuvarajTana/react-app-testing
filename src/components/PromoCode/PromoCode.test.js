@@ -37,6 +37,7 @@ test('On entering promo code text field should have value and button should be a
   // Act 
   const inputElement = screen.getByRole('textbox');
   const buttonElement = screen.getByRole('button');
+
   await fireEvent.change(inputElement, { target: { value: "DIWALI200" } });
 
   // ASSERT
@@ -60,6 +61,7 @@ test('On click submit button and successfully API response turn button text to A
 
     //ASSERT
     expect(buttonElement).toBeInTheDocument();
+    expect(buttonElement.textContent).toBe('Applied');
 });
 
 test('Passing promo as prop and it should show promo code with Applied button', () => {

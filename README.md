@@ -14,7 +14,7 @@
   - In TDD, developers create small test cases for every feature based on their initial understanding. The primary intention of this technique is to modify or write new code only if the tests fail. This prevents duplication of test scripts.
 
 **Benefits of TDD**
-  - It helps developers better analyze and understand client requirements and request clarity when not adequately defined.
+  - It helps developers better analyze and understand requirements and request clarity when not adequately defined.
 
   - Adding and testing new functionalities become much easier in the latter stages of development.
 
